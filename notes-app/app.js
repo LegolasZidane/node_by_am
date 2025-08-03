@@ -20,6 +20,12 @@
 
 // console.log(sum);
 
-const getNotes = require('./notes.js');
+// const getNotes = require('./notes.js');
 
-console.log(getNotes());
+// console.log(getNotes());
+
+const validator = require('validator');
+
+// console.log(validator.isEmail('laraibaa5@gmail.com'));
+
+console.log(validator.isURL('https://google.com'));

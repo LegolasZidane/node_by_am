@@ -29,3 +29,4 @@ const validator = require('validator');
 // console.log(validator.isEmail('laraibaa5@gmail.com'));
 
 console.log(validator.isURL('https://google.com'));
+

@@ -38,41 +38,52 @@
 
 // console.log(process.argv);
 
-const yargs = require('yargs');
+const yargs = require("yargs");
 
 // Create add command
 
 yargs.command({
-    command: 'add',
-    describe: 'Add a new note',
-    handler: function () {
-        console.log('Adding a new note!');
-    }
+  command: "add",
+  describe: "Add a new note",
+  builder: {
+    title: {
+      describe: "Note title",
+      demandOption: true,
+      type: "string",
+    },
+    body: {
+      describe: "Note body",
+      demandOption: true,
+      type: "string",
+    },
+  },
+  handler: function (argv) {
+    console.log("Title: " + argv.title + "\n" + "Body: " + argv.body);
+  },
 });
 
 yargs.command({
-    command: 'remove',
-    describe: 'Remove a note',
-    handler: function () {
-        console.log('Removing the note');
-    }
+  command: "remove",
+  describe: "Remove a note",
+  handler: function () {
+    console.log("Removing the note");
+  },
 });
 
 yargs.command({
-    command: 'list',
-    describe: 'List your notes',
-    handler: function () {
-        console.log('Listing out all note/s');
-    }
+  command: "list",
+  describe: "List your notes",
+  handler: function () {
+    console.log("Listing out all note/s");
+  },
 });
 
 yargs.command({
-    command: 'read',
-    describe: 'Read a note',
-    handler: function () {
-        console.log('Reading a note');
-    }
+  command: "read",
+  describe: "Read a note",
+  handler: function () {
+    console.log("Reading a note");
+  },
 });
 
-console.log(yargs.argv);
-//Continue from 1 minute of video 17.
+yargs.parse();

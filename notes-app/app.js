@@ -24,9 +24,55 @@
 
 // console.log(getNotes());
 
-const validator = require('validator');
+// const validator = require('validator');
 
-// console.log(validator.isEmail('laraibaa5@gmail.com'));
+// // console.log(validator.isEmail('laraibaa5@gmail.com'));
 
-console.log(validator.isURL('https://google.com'));
+// console.log(validator.isURL('https://google.com'));
 
+// const chalk = require("chalk");
+
+// const success = chalk.green.bold.bgGreen;
+
+// console.log(success("Success!"));
+
+// console.log(process.argv);
+
+const yargs = require('yargs');
+
+// Create add command
+
+yargs.command({
+    command: 'add',
+    describe: 'Add a new note',
+    handler: function () {
+        console.log('Adding a new note!');
+    }
+});
+
+yargs.command({
+    command: 'remove',
+    describe: 'Remove a note',
+    handler: function () {
+        console.log('Removing the note');
+    }
+});
+
+yargs.command({
+    command: 'list',
+    describe: 'List your notes',
+    handler: function () {
+        console.log('Listing out all note/s');
+    }
+});
+
+yargs.command({
+    command: 'read',
+    describe: 'Read a note',
+    handler: function () {
+        console.log('Reading a note');
+    }
+});
+
+console.log(yargs.argv);
+//Continue from 1 minute of video 17.
